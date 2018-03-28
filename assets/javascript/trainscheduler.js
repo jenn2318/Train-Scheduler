@@ -28,8 +28,9 @@ var config = {
   $("#add-train-btn").on("click", function () {
   	   var trainName = $("#train-Name").val();
   	   var destination = $("#destination").val();
-  	   var firstTrainTime = $("#first-train-time").val();
+  	   // var firstTrainTime = $("#first-train-time").val();
   	   var frequency = $("#frequency").val();
+       var nextArrival = $("#firstTrainStart").val();
   
 
     var newTrain = {
@@ -45,7 +46,7 @@ var config = {
     //Console logs to check to see if everything shows up
     console.log(newTrain.name);
     console.log(newTrain.destination);
-    console.log(newTrain.firstTrainTime);
+    console.log(newTrain.firstTrainStart);
     console.log(newTrain.frequency);
     alert("Train has been added successfully!");
 
@@ -53,7 +54,7 @@ var config = {
   //Clear out data from train entered
   $("#trainName").val("");
   $("#destination").val("");
-  $("firstTrainTime").val("");
+  $("#firstTrainStart").val("");
   $("#frequency").val("");
 
   //Next train arrives
@@ -71,8 +72,8 @@ var config = {
     //Making variables for the data
     var trName = childSnapshot.val().trainName;
     var trDestination = childSnapshot.val().destination;
-    var trFirstTrain = childSnapshot.val().firstTrainTime;
+    var trFirstTrain = childSnapshot.val().firstTrainStart;
     var trFrequency = childSnapshot.val().frequency
-
+    
 
   });
