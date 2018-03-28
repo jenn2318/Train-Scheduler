@@ -25,7 +25,7 @@ var config = {
   //First thing will be to add train information
   //===================================================================
 
-  $("#add-train-button ").on("click", function () {
+  $("#add-train-btn").on("click", function () {
   	   var trainName = $("#train-Name").val();
   	   var destination = $("#destination").val();
   	   var firstTrainTime = $("#first-train-time").val();
@@ -49,4 +49,30 @@ var config = {
     console.log(newTrain.frequency);
     alert("Train has been added successfully!");
 
-});
+
+  //Clear out data from train entered
+  $("#trainName").val("");
+  $("#destination").val("");
+  $("firstTrainTime").val("");
+  $("#frequency").val("");
+
+  //Next train arrives
+  return false;
+
+});  
+
+  //Moment Functions Below for figuring time of Trains
+  //==================================================
+
+  trainDataInfo.ref().on("child_added", function(childSnapshot, prevChildKey){
+
+    console.log(childSnapshot.val());
+
+    //Making variables for the data
+    var trName = childSnapshot.val().trainName;
+    var trDestination = childSnapshot.val().destination;
+    var trFirstTrain = childSnapshot.val().firstTrainTime;
+    var trFrequency = childSnapshot.val().frequency
+
+
+  });
