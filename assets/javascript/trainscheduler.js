@@ -88,7 +88,7 @@ var config = {
 
     // Current 
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
     // Difference between the times
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
@@ -104,10 +104,10 @@ var config = {
 
     // Next Train
     var nextTrain = moment().add(trminutesAway, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
 
     //Add train data to the table
     //===========================================================================================
-$(".table").append("<tr><td>" + trName + "</td><td>" + trDestination + "</td><td>" + firstTrain + "</div>" + "<td>" + frequency + "</td><td>" + trnextArrival + "</td><td>" + trminutesAway + "</td></tr>");
+$(".table").append("<tr><td>" + trName + "</td><td>" + trDestination + "</td><td>" + trFirstTrain + "</div>" + "<td>" + trFrequency + "</td><td>" + trminutesAway + "</td></tr>");
 
 });
